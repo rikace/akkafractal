@@ -17,8 +17,6 @@ module Pages =
       Scripts = [
         yield "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
         yield "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-//        yield "/js/jquery.js"
-//        yield "/js/bootstrap.bundle.js"
         yield "/js/site.js"
       ]
       

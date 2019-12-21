@@ -63,9 +63,7 @@ module GiraffeViewEngine =
                   _href "/favicon.ico"]
             link [_rel "stylesheet"
                   _type "text/css"
-                  
                   _href  "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" ]
-                  //_href  "/css/bootstrap.css"]
             link [_rel "stylesheet"
                   _type "text/css"
                   _href  "/css/site.css"]            
