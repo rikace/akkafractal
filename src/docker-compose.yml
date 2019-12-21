@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  lighthouse:
+    image: petabridge/lighthouse:latest
+    hostname: lighthouse
+    ports:
+      - '4053:4053'
+      - '9110:9110'
+    environment:
+      ACTORSYSTEM: "fractal"
+      CLUSTER_IP: "lighthouse"
+      CLUSTER_PORT: 4053
+      CLUSTER_SEEDS: "akka.tcp://fractal@lighthouse:4053"
+  #
+  akkafractal.web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - '0:80'
+      - '5000:5000'
+    depends_on:
+      - akkafractal-worker-1
+     # - akkafractal-worker-2
+      - lighthouse
+    environment:
+      ASPNETCORE_ENVIRONMENT: local
+      ASPNETCORE_URLS: http://+:5000
+      CLUSTER_IP: "akkafractal.web"
+      CLUSTER_PORT: 0
+
+  akkafractal-worker-1:
+    build:
+      context: .
+      dockerfile: Dockerfile.remoting
+    ports:
+      - "0:9110"
+    depends_on:
+      - lighthouse
+    environment:
+      CLUSTER_IP: "akkafractal-worker-1"
+      CLUSTER_PORT: 0
+
+  akkafractal-worker-2:
+    build:
+      context: .
+      dockerfile: Dockerfile.remoting
+    ports:
+      - '0:9110'
+    depends_on:
+      - lighthouse
+    environment:
+      CLUSTER_IP: "akkafractal-worker-2"
+      CLUSTER_PORT: 0        

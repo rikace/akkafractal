@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Akka.Fractal.Remote", "Akka.Fractal.Remote\Akka.Fractal.Remote.fsproj", "{FECE8060-1D8A-4159-931A-0972B3D8E0BD}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Akka.Fractal.Server", "Akka.Fractal.Server\Akka.Fractal.Server.fsproj", "{7EC0C100-E609-4AAE-A22D-0A5053A7FDAB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Akka.Fractal.Common", "Akka.Fractal.Common\Akka.Fractal.Common.fsproj", "{D0AAFD74-726D-4BCE-8BE3-004939C1B23E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECE8060-1D8A-4159-931A-0972B3D8E0BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECE8060-1D8A-4159-931A-0972B3D8E0BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECE8060-1D8A-4159-931A-0972B3D8E0BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECE8060-1D8A-4159-931A-0972B3D8E0BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC0C100-E609-4AAE-A22D-0A5053A7FDAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC0C100-E609-4AAE-A22D-0A5053A7FDAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC0C100-E609-4AAE-A22D-0A5053A7FDAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC0C100-E609-4AAE-A22D-0A5053A7FDAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0AAFD74-726D-4BCE-8BE3-004939C1B23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0AAFD74-726D-4BCE-8BE3-004939C1B23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0AAFD74-726D-4BCE-8BE3-004939C1B23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0AAFD74-726D-4BCE-8BE3-004939C1B23E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

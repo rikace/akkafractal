@@ -1,0 +1,32 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY ./Akka.Fractal.Server/Akka.Fractal.Server.fsproj ./Akka.Fractal.Server/Akka.Fractal.Server.fsproj
+COPY ./Akka.Fractal.Common/Akka.Fractal.Common.fsproj ./Akka.Fractal.Common/Akka.Fractal.Common.fsproj
+COPY ./build.sh  ./build.sh 
+COPY ./paket.lock  ./paket.lock
+COPY ./paket.dependencies  ./paket.dependencies
+RUN ./build.sh 
+COPY ./.paket/Paket.Restore.targets  ./.paket/Paket.Restore.targets
+
+RUN dotnet restore ./Akka.Fractal.Common/Akka.Fractal.Common.fsproj 
+RUN dotnet restore ./Akka.Fractal.Server/Akka.Fractal.Server.fsproj 
+
+# Copy all source code to image.
+COPY ./Akka.Fractal.Server ./Akka.Fractal.Server
+COPY ./Akka.Fractal.Common ./Akka.Fractal.Common
+
+WORKDIR ./Akka.Fractal.Server/
+RUN dotnet build  Akka.Fractal.Server.fsproj -c Release
+RUN dotnet publish Akka.Fractal.Server.fsproj -c Release -o publish
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
+WORKDIR /app
+COPY --from=build-env /app/Akka.Fractal.Server/publish/ .
+
+EXPOSE 80 
+EXPOSE 5000
+
+ENTRYPOINT ["dotnet", "Akka.Fractal.Server.dll"]

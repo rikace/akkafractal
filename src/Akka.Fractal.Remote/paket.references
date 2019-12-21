@@ -1,0 +1,6 @@
+Akka
+Akka.Remote
+Akka.Cluster
+Akka.FSharp
+Akka.Bootstrap.Docker
+FSharp.Core

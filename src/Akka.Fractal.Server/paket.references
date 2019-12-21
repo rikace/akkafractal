@@ -1,0 +1,11 @@
+Microsoft.AspNetCore.App
+Microsoft.AspNetCore.WebSockets
+FSharp.Core
+Giraffe
+Giraffe.Razor
+Taskbuilder.fs
+Akka
+Akka.Remote
+Akka.Cluster
+Akka.FSharp
+Akka.Bootstrap.Docker

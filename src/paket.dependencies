@@ -1,0 +1,27 @@
+storage: none
+source https://api.nuget.org/v3/index.json
+framework: netcoreapp2.1
+
+nuget FSharp.Core 4.6.2
+nuget Microsoft.AspNetCore.App 2.1.14
+nuget Giraffe
+nuget Giraffe.Razor
+nuget TaskBuilder.fs
+nuget Microsoft.AspNetCore.Http
+nuget Microsoft.AspNetCore.All 
+nuget Microsoft.AspNetCore.WebSockets
+nuget Microsoft.IO.RecyclableMemoryStream
+nuget SixLabors.ImageSharp 1.0.0-beta0006
+
+
+nuget Akka
+nuget Akka.Remote
+nuget Akka.Cluster
+nuget Akka.FSharp
+nuget Akka.Bootstrap.Docker
+
+nuget System.Reactive.Interfaces
+nuget System.Reactive
+nuget System.Reactive.Core
+nuget System.Reactive.Linq
+nuget System.Reactive.PlatformServices
