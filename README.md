@@ -1,3 +1,4 @@
+#Working project clustering in F# and docker-compose
 # Akka Fractal with Docker Containers and F# 
 
 Run the application with 
